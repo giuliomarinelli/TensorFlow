@@ -24,8 +24,8 @@ test_images = test_images / 255.0
 model = tf.keras.models.Sequential([
     tf.keras.Input(shape=(28,28)),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(128, tf.nn.relu),
-    tf.keras.layers.Dense(10, activation=tf.nn.softmax)
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')
 ])
 
 # Declare sample inputs and convert to a tensor
