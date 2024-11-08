@@ -45,6 +45,7 @@ model = tf.keras.models.Sequential([
 # prediction = np.argmax(outputs)
 # print(f'class with highest probability: {prediction}')
 
-model.compile(optimizer=tf.optimizers.Adam(), loss='sparse_categorical_crossentropy', metrics='accuracy')
+model.compile(optimizer=tf.optimizers.Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 model.fit(training_images, training_labels, epochs=5)
 model.evaluate(test_images, test_labels)
+model.save('fashion_mnist_model.keras')
